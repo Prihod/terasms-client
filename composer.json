@@ -1,0 +1,46 @@
+{
+  "name": "prihod/terasms-client",
+  "description": "PHP client for terasms.ru API",
+  "keywords": [
+    "api-client",
+    "terasms.ru",
+    "API",
+    "PHP"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Prihod"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0",
+    "symfony/deprecation-contracts": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "TeraSMS\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TeraSMS\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "phpunit",
+    "check-style": "phpcs --standard=./ruleset.xml src tests examples",
+    "fix-style": "phpcbf --standard=./ruleset.xml src tests examples"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "squizlabs/php_codesniffer": "^3.7"
+  }
+}

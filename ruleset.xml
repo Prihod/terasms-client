@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Coding Standards">
+    <description>Custom Ruleset</description>
+
+    <!-- Extend the PSR-12 standard -->
+    <rule ref="PSR12">
+        <!-- Disable some rules that are too strict -->
+        <exclude name="PSR12.Properties.ConstantVisibility.NotFound"/>
+        <exclude name="PSR12.Traits.UseDeclaration.NamespaceNotValid"/>
+    </rule>
+
+    <!-- Require modern PHP versions -->
+    <config name="testVersion" value="7.4-"/>
+
+    <!-- Require LF line endings -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+
+    <!-- Require UTF-8 encoding -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!-- Require PHPDoc for all classes, functions and properties -->
+    <rule ref="Squiz.Commenting.ClassComment"/>
+    <rule ref="Squiz.Commenting.FunctionComment"/>
+    <rule ref="Squiz.Commenting.VariableComment"/>
+
+    <!-- Enforce camelCase for function and variable names -->
+    <rule ref="Squiz.NamingConventions.ValidFunctionName"/>
+    <rule ref="Squiz.NamingConventions.ValidVariableName"/>
+
+    <!-- Disallow unnecessary code -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+
+    <!-- Additional rules -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="150"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+</ruleset>

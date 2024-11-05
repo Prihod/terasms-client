@@ -1,0 +1,6 @@
+services:
+  php:
+    image: php:7.4-cli
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
